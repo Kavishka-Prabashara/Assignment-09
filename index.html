@@ -101,8 +101,15 @@
             <audio id="audio" src="assets/audio/audio.mp3"></audio>
             <script src="assets/lib/jquery.js"></script>
         <script >
+            $("#start-button").on("click", () => {
 
+                $("#audio")[0].play();
+            });
 
+            $("#stop-button").on("click", () => {
+
+                $("#audio")[0].pause();
+            });
         </script>
 
         </body>
