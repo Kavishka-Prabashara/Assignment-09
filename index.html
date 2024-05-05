@@ -21,6 +21,36 @@
             justify-items: center;
             align-items: center;
         }
+        .buttons {
+            height: 50px;
+            width: 10%;
+            background-color: red;
+            color: white;
+            border: 5px solid black;
+            border-radius: 10px;
+            font-family: Ruben, sans-serif;
+            padding: 10px 20px;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px red;
+            transition: all 0.3s ease;
+            font-size: 20px;
+        }
+
+        .buttons:hover {
+            background-color: #cc0000;
+        }
+
+        .buttons:active {
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+        #title {
+            color: white;
+            font-size: 30px;
+        }
+        #wallpaper {
+            width: 300px;
+        }
 
     </style>
 
@@ -32,7 +62,7 @@
                 <h2 id="title">Knight Rider</h2>
 <!------------------------------------------------</>title-row>-------------------------------------------------->
 <!------------------------------------------------<first-row>-------------------------------------------------->
-                <img src="assets/images/Kitt.jpg">
+                <img src="assets/images/Kitt.jpg" alt="KittWallpaper" id="wallpaper">
 <!------------------------------------------------</>first-row>-------------------------------------------------->
 
 <!------------------------------------------------<second-row>-------------------------------------------------->
