@@ -15,59 +15,13 @@
         }
         #container {
             display: grid;
-            grid-template-rows: auto auto auto auto;
+            grid-template-rows: 25% 25% 25% 25%;
             grid-template-columns: 1fr;
-            gap: 10px;
+            gap: 5px;
             justify-items: center;
             align-items: center;
             width: 100vw;
 
-        }
-        #start-button {
-            height: 50px;
-            width: 10%;
-            background-color: red;
-            color: white;
-            border: 5px solid black;
-            border-radius: 10px;
-            font-family: Ruben, sans-serif;
-            padding: 10px 20px;
-            cursor: pointer;
-            box-shadow: 0px 0px 10px red;
-            transition: all 0.3s ease;
-            font-size: 20px;
-        }
-
-        #start-button:hover {
-            background-color: #cc0000;
-        }
-
-        #start-button:active {
-            transform: translateY(1px);
-            box-shadow: none;
-        }
-        #end-button {
-            height: 50px;
-            width: 10%;
-            background-color: red;
-            color: white;
-            border: 5px solid black;
-            border-radius: 10px;
-            font-family: Ruben, sans-serif;
-            padding: 10px 20px;
-            cursor: pointer;
-            box-shadow: 0px 0px 10px red;
-            transition: all 0.3s ease;
-            font-size: 20px;
-        }
-
-        #end-button:hover {
-            background-color: #cc0000;
-        }
-
-        #end-button:active {
-            transform: translateY(1px);
-            box-shadow: none;
         }
 
         #title {
@@ -84,9 +38,30 @@
             background-color: white;
             display: inline-block;
         }
-        .buttons {
-            display: inline-block;
+        button{
+            height: 10px;
+            width: 20vw;
+            padding: 25px 30px;
+            background-color: #050801;
+            color: #03e9f4;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            letter-spacing: 4px;
+            overflow: hidden;
+            transition: 0.5s;
+            cursor: pointer;
         }
+
+        button:hover{
+            background: #03e9f4;
+            color: #050801;
+            box-shadow: 0 0 5px #03e9f4,
+            0 0 25px #03e9f4,
+            0 0 50px #03e9f4,
+            0 0 200px #03e9f4;
+        }
+
 
     </style>
 
@@ -97,11 +72,11 @@
 <!------------------------------------------------<title-row>-------------------------------------------------->
                 <h2 id="title">Knight Rider</h2>
 <!------------------------------------------------</>title-row>-------------------------------------------------->
-<!------------------------------------------------<first-row>-------------------------------------------------->
+<!------------------------------------------------<Image-row>-------------------------------------------------->
                 <img src="assets/images/Kitt.jpg" alt="KittWallpaper" id="wallpaper">
-<!------------------------------------------------</>first-row>-------------------------------------------------->
+<!------------------------------------------------</>Image-row>-------------------------------------------------->
 
-<!------------------------------------------------<second-row>-------------------------------------------------->
+<!------------------------------------------------<Bulb-row>-------------------------------------------------->
                 <div id="mainRow">
 
                     <div class="bulbs"></div>
@@ -112,12 +87,14 @@
                     <div class="bulbs"></div>
 
                 </div>
-<!------------------------------------------------</>second-row>-------------------------------------------------->
+<!------------------------------------------------</>Bulb-row>-------------------------------------------------->
 
-<!------------------------------------------------<third-row>-------------------------------------------------->
-                <button class="buttons" id="start-button">Start</button>
-                <button class="buttons" id="end-button">Stop</button>
-<!------------------------------------------------</>third-row>-------------------------------------------------->
+<!------------------------------------------------<Buttons-row>-------------------------------------------------->
+                <div id="btnPanel">
+                    <button class="buttons" id="start-button">Start</button>
+                    <button class="buttons" id="end-button">Stop</button>
+                </div>
+<!------------------------------------------------</>Buttons-row>-------------------------------------------------->
             </section>
 
         </body>
