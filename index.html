@@ -9,6 +9,9 @@
         body {
             background-color: black;
         }
+        #title {
+
+        }
         section {
             height: 100vh;
             width: 100vw;
@@ -35,7 +38,7 @@
             height: 30px;
             width: 10vw;
             border: black;
-            background-color: white;
+            background-color: #000000;
             display: inline-block;
         }
         button{
@@ -63,7 +66,14 @@
             0 0 50px #e80101,
             0 0 200px #e80101;
         }
-
+        .light_on {
+            background: #c50000;
+            box-shadow: 0px 0px 20px red;
+        }
+        .light_on2 {
+            background: #e70000;
+            box-shadow: 0px 0px 20px #e70000;
+        }
 
     </style>
 
@@ -101,7 +111,49 @@
             <audio id="audio" src="assets/audio/audio.mp3"></audio>
             <script src="assets/lib/jquery.js"></script>
         <script >
+
+            var current_light_index = 0;
+            var max_light_count = 6;
+            var move = "RIGHT";
+
+            var myInterval = null;
+
+            function updateLightPanel() {
+                $(".bulbs").removeClass("light_on");
+                $(".bulbs").removeClass("light_on2");
+
+
+                $(".bulbs").eq(current_light_index).addClass("light_on");
+
+                if(move==="RIGHT") {
+                    if(current_light_index!==0) $(".bulbs").eq(current_light_index-1).addClass("light_on2");
+
+                    ++current_light_index;
+                    if(current_light_index>max_light_count - 2) {
+                        move = "LEFT";
+                    }
+
+                } else {
+                    $(".bulbs").eq(current_light_index+1).addClass("light_on2");
+
+                    --current_light_index;
+                    if(current_light_index===0) {
+                        move = "RIGHT";
+                    }
+                }
+
+            }
+
             $("#start-button").on("click", () => {
+                myInterval = setInterval(updateLightPanel, 100);
+                $("#audio")[0].play();
+            });
+
+            $("#stop-button").on("click", () => {
+                myInterval = clearInterval(myInterval);
+                $("#audio")[0].pause();
+            });
+            /*$("#start-button").on("click", () => {
 
                 $("#audio")[0].play();
             });
@@ -109,7 +161,8 @@
             $("#stop-button").on("click", () => {
 
                 $("#audio")[0].pause();
-            });
+            });*/
+
         </script>
 
         </body>
